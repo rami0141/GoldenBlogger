@@ -1,4 +1,9 @@
 <div class="row">
+  <div class="col-md-12">
+    <app-instructions></app-instructions>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-6">
     <form>
       <div class="card p-3">
@@ -38,7 +43,7 @@
       <label for="exampleFormControlTextarea1">Write Blog Here:</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" (input)="onUpdateBlog($event)"></textarea>
     </div>
-    <button type="button" class="btn btn-primary btn-block btn-lg gold">Post Blog</button>
+    <button type="button" class="btn btn-block btn-lg gold">Post Blog</button>
   </div>
 </div>
   </form>
