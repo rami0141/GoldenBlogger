@@ -24,6 +24,7 @@
   transition: 0.5s padding;
   text-align: center;
   width: 100%;
+  border: 4px solid #FED148;
 }
 
 .imagebox:hover img {

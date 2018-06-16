@@ -1,4 +1,18 @@
 # GoldenBlogger
+With TheGoldenBlogger you can read popular blogs, search blogs by topic and post your own blogs.
+
+## Technologies
+
+* [Angular.js](https://angularjs.org/) Front-End Application Framework
+* [Bootstrap](https://getbootstrap.com/) Front-End Framework
+
+## Author
+
+*Cristina Zhang - Full Stack Developer
+
+## Deployed
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
