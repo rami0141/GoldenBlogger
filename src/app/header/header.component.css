@@ -1,1 +1,11 @@
-
+.gold {
+  color: #FED148;
+  font-size: 23px;
+}
+ ul li a {
+   color: white;
+   margin-left: 35px;
+ }
+ .navbar {
+   border-top: 5px solid #FED148;
+ }

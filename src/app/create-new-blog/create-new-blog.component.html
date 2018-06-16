@@ -1,13 +1,15 @@
 <div class="row">
   <div class="col-md-6">
     <form>
+      <div class="card p-3">
+        <div class="card-body">
     <div class="form-group">
       <label for="exampleFormControlInput1">Blog Title:</label>
-      <input type="text" class="form-control" placeholder="">
+      <input type="text" class="form-control" (input)="onUpdateTitleName($event)">
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Author:</label>
-      <input type="text" class="form-control" placeholder="">
+      <input type="text" class="form-control" (input)="onUpdateAuthorName($event)">
     </div>
     <div class="form-group">
       <label for="exampleFormControlSelect1">Blog Topic:</label>
@@ -29,13 +31,55 @@
       <input type="text" class="form-control" placeholder="">
     </div>
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Write Blog Here:</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="25"></textarea>
+      <label for="exampleFormControlTextarea1">Write A Blog Summary:</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" (input)="onUpdateSummary($event)"></textarea>
     </div>
-    <button type="button" class="btn btn-primary btn-lg">Post Blog</button>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Write Blog Here:</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" (input)="onUpdateBlog($event)"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary btn-block btn-lg gold">Post Blog</button>
+  </div>
+</div>
   </form>
   </div>
   <div class="col-md-6">
-    <app-new-blog-display></app-new-blog-display>
+    <!-- <app-new-blog-display></app-new-blog-display> -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card gold">
+          <div class="card-body">
+            <h4>{{ blogName }} By {{ authorName }}</h4>
+            <p>Topic:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-3 gold">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Indian-Food-wikicont.jpg"
+              class="float-left img-responsive pr-3"
+              style="height: 200px">
+            <h5>INTRODUCTION:</h5>
+            <h6 class="pull-right">{{ summary }}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-3 gold">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <p>{{ blog }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
   </div>
 </div>
