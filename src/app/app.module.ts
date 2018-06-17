@@ -7,7 +7,8 @@ import { CreateNewBlogComponent } from './create-new-blog/create-new-blog.compon
 import { TopicsComponent } from './topics/topics.component';
 import { HomeComponent } from './home/home.component';
 import { InstructionsComponent } from './create-new-blog/instructions/instructions.component';
-import { BlogViewComponent } from './blog-view/blog-view.component';
+import { BlogViewComponent } from './blog-view-sidebar/blog-view/blog-view.component';
+import { BlogViewSidebarComponent } from './blog-view-sidebar/blog-view-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
     HomeComponent,
     InstructionsComponent,
     BlogViewComponent,
+    BlogViewSidebarComponent,
   ],
   imports: [
     BrowserModule
