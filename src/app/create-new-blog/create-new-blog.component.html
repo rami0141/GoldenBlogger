@@ -4,70 +4,99 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6">
-    <form>
+  <div class="col-md-6 mb-5">
+    <!-- Telling Angular that the Form is managed by us and not by Angular -->
+    <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
       <div class="card p-3 goldBorder">
         <div class="card-body">
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Blog Title:</label>
-      <input type="text" class="form-control" (input)="onUpdateTitleName($event)">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Author:</label>
-      <input type="text" class="form-control" (input)="onUpdateAuthorName($event)">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlSelect1">Blog Topic:</label>
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option>Food</option>
-        <option>Fitness</option>
-        <option>Travel</option>
-        <option>Fashion</option>
-        <option>Celebrity</option>
-        <option>TV & Films</option>
-        <option>Tech</option>
-        <option>Politics</option>
-        <option>Humour</option>
-        <option>Kpop</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Image Link:</label>
-      <input type="text" class="form-control" placeholder="">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Write A Blog Summary:</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" (input)="onUpdateSummary($event)"></textarea>
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlTextarea1">Write Blog Here:</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="15" (input)="onUpdateBlog($event)"></textarea>
-    </div>
-    <button type="button" class="btn btn-block btn-lg gold">Post Blog</button>
-  </div>
-</div>
-  </form>
-  </div>
-  <div class="col-md-6">
-    <!-- <app-new-blog-display></app-new-blog-display> -->
-    <div class="row">
-      <div class="col-md-12">
-        <div class="card goldBorder">
-          <div class="card-body">
-            <h3>{{ blogName }} By {{ authorName }}</h3>
-            <p>Topic:</p>
+          <div class="form-group">
+            <label for="title">Blog Title:</label>
+            <input
+              type="text"
+              id="title"
+              formControlName="title"
+              class="form-control"
+              (input)="onUpdateTitleName($event)">
           </div>
+          <div class="form-group">
+            <label for="name">Author:</label>
+            <input
+              type="text"
+              id="name"
+              formControlName="name"
+              class="form-control"
+              (input)="onUpdateAuthorName($event)">
+          </div>
+          <div class="form-group">
+            <label for="topic">Blog Topic:</label>
+            <select
+              class="form-control"
+              id="topic"
+              formControlName="topic">
+              <option selected></option>
+              <option>Food</option>
+              <option>Fitness</option>
+              <option>Travel</option>
+              <option>Fashion</option>
+              <option>Celebrity</option>
+              <option>TV & Films</option>
+              <option>Tech</option>
+              <option>Politics</option>
+              <option>Humour</option>
+              <option>Kpop</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="imageLink">Image Link:</label>
+            <input
+              type="text"
+              id="imageLink"
+              formControlName="imageLink"
+              class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="summary">Write A Blog Summary:</label>
+            <textarea
+              class="form-control"
+              id="summary"
+              formControlName="summary"
+              rows="6"
+              (input)="onUpdateSummary($event)"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="blog">Write Blog Here:</label>
+            <textarea
+              class="form-control"
+              id="blog"
+              formControlName="blog"
+              rows="15"
+              (input)="onUpdateBlog($event)"></textarea>
+          </div>
+          <button type="submit" class="btn btn-lg gold mr-4">Post Blog</button>
+          <button type="button" class="btn btn-lg gold">Cancel</button>
         </div>
       </div>
-    </div>
+    </form>
+  </div>
+
+
+  <div class="col-md-6 mb-5">
+    <!-- <app-new-blog-display></app-new-blog-display> -->
+    <div class="card goldBorder">
+      <div class="card-body">
+        <h3>{{ blogName }} By {{ authorName }}</h3>
+          <p>{{ topic }}</p>
+        </div>
+      </div>
     <div class="card mt-3 goldBorder">
       <div class="card-body">
         <div class="row">
           <div class="col-md-12">
             <div class="sidebar-thumb">
               <img
-                src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Indian-Food-wikicont.jpg"
-                class="img-responsive">
+                src=""
+                class="img-responsive"
+                alt="Your Image Here">
             </div>
             <h5>INTRODUCTION:</h5>
             <h6 class="pull-right">{{ summary }}</h6>
