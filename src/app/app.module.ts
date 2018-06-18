@@ -9,6 +9,16 @@ import { HomeComponent } from './home/home.component';
 import { InstructionsComponent } from './create-new-blog/instructions/instructions.component';
 import { BlogViewComponent } from './blog-view-sidebar/blog-view/blog-view.component';
 import { BlogViewSidebarComponent } from './blog-view-sidebar/blog-view-sidebar.component';
+import { Routes, RouterModule } from "@angular/router";
+
+// Routes - specific type = routes - Need to import
+// Needs to be an array - because we will have multiple routes
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'topics', component: TopicsComponent },
+  { path: 'addBlog', component: CreateNewBlogComponent },
+  { path: 'view', component: BlogViewSidebarComponent },
+];
 
 @NgModule({
   declarations: [
@@ -22,7 +32,8 @@ import { BlogViewSidebarComponent } from './blog-view-sidebar/blog-view-sidebar.
     BlogViewSidebarComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
