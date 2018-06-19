@@ -1,6 +1,6 @@
 # GoldenBlogger
 
-![alt text](src/app/assets/images/app.PNG)
+![alt text](src/assets/images/app.PNG)
 
 With TheGoldenBlogger you can read popular blogs, search blogs by topic and post your own blogs.
 
