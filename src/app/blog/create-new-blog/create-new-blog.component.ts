@@ -6,7 +6,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './create-new-blog.component.html',
   styleUrls: ['./create-new-blog.component.css']
 })
-
 export class CreateNewBlogComponent implements OnInit {
   blogName = '';
   authorName = '';
@@ -43,10 +42,6 @@ export class CreateNewBlogComponent implements OnInit {
   onUpdateAuthorName(event: any) {
     this.authorName = event.target.value;
   }
-
-  // onUpdateTitle(event: any) {
-  //   this.topic = event.target.value;
-  // }
 
   onUpdateLink(event: any) {
     this.imageLink = event.target.value;

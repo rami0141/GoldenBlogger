@@ -1,13 +1,3 @@
-.gold {
-  background-color: black;
-  color: white;
-  font-size: 16px;
-  border: 2px solid #FED148;
-}
-
-input, textarea, select, .card {
-  border: 1px solid gray;
-}
 .sidebar-thumb{
     float: left;
     overflow: hidden;
@@ -25,6 +15,7 @@ input, textarea, select, .card {
   border-radius: 100px;
 }
 
-input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
-  border: 1px solid red;
+a {
+  color: black;
+  /* border: 2px solid #FED148; */
 }
