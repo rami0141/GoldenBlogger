@@ -12,7 +12,7 @@ import { HomeComponent } from './home/home.component';
 
 import { BlogComponent } from './blog/blog.component';
 import { SideBarComponent } from './blog/side-bar/side-bar.component';
-import { BlogPreviewComponent } from './blog/blog-preview/blog-preview.component';
+import { BlogPreviewComponent } from './blog/side-bar/blog-preview/blog-preview.component';
 import { CreateNewBlogComponent } from './blog/create-new-blog/create-new-blog.component';
 import { ViewCreateNewComponent } from './blog/create-new-blog/view-create-new/view-create-new.component';
 import { InstructionsComponent } from './blog/create-new-blog/instructions/instructions.component';
