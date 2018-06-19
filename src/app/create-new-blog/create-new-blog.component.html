@@ -51,12 +51,13 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="imageLink">Image Link:</label>
+            <label for="imageLink">Blog Image Link:</label>
             <input
               type="text"
               id="imageLink"
               formControlName="imageLink"
               class="form-control"
+              (input)="onUpdateLink($event)"
               required>
           </div>
           <div class="form-group">
@@ -99,7 +100,7 @@
           <div class="col-md-12">
             <div class="sidebar-thumb">
               <img
-                src=""
+                [src]="imageLink"
                 class="img-responsive"
                 alt="Your Image Here">
             </div>
