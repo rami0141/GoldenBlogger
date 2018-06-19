@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create-new-blog',
@@ -56,16 +56,13 @@ export class CreateNewBlogComponent implements OnInit {
     let blogSummary = '';
     let blog = '';
 
-    // if (this.editMode) {
-    //   blogName = this.
-    // }
     this.blogForm = new FormGroup({
-      'title': new FormControl(blogName),
-      'name': new FormControl(authorName),
-      'topic': new FormControl(blogTopic),
-      'imageLink': new FormControl(blogImageLink),
-      'summary': new FormControl(blogSummary),
-      'blog': new FormControl(blog),
+      'title': new FormControl(blogName, Validators.required),
+      'name': new FormControl(authorName, Validators.required),
+      'topic': new FormControl(blogTopic, Validators.required),
+      'imageLink': new FormControl(blogImageLink, Validators.required),
+      'summary': new FormControl(blogSummary, Validators.required),
+      'blog': new FormControl(blog, Validators.required),
     });
   }
 
