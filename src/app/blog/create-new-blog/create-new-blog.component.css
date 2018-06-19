@@ -5,14 +5,6 @@
   border: 2px solid #FED148;
 }
 
-input, textarea, select, .card {
-  border: 1px solid gray;
-}
-
-input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
-  border: 1px solid red;
-}
-
 .sidebar-thumb{
     float: left;
     overflow: hidden;
@@ -32,4 +24,8 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
 
 input, textarea, select, .card {
   border: 1px solid gray;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 1px solid red;
 }
