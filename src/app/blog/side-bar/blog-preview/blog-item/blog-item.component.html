@@ -1,0 +1,13 @@
+<a
+  href="#"
+  class="list-group-item clearfix mb-4">
+  <!-- ngFor looping all blogs -->
+  <div class="sidebar-thumb">
+    <img
+      [src]="blog.imageLink"
+      alt="{{ blog.title }}"
+      class="img-responsive img-round">
+  </div>
+    <h3 class="list-group-item-heading">{{ blog.title }} By {{ blog.name }}</h3>
+    <p class="list-group-item-text">{{ blog.summary }}</p>
+</a>

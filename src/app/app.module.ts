@@ -17,6 +17,7 @@ import { CreateNewBlogComponent } from './blog/create-new-blog/create-new-blog.c
 import { ViewCreateNewComponent } from './blog/create-new-blog/view-create-new/view-create-new.component';
 import { InstructionsComponent } from './blog/create-new-blog/instructions/instructions.component';
 import { FullBlogViewComponent } from './blog/side-bar/full-blog-view/full-blog-view.component';
+import { BlogItemComponent } from './blog/side-bar/blog-preview/blog-item/blog-item.component';
 
 // Routes - specific type = routes - Need to import
 // Needs to be an array - because we will have multiple routes
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
     ViewCreateNewComponent,
     InstructionsComponent,
     FullBlogViewComponent,
+    BlogItemComponent,
   ],
   imports: [
     BrowserModule,

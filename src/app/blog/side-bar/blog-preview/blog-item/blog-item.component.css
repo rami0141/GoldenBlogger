@@ -1,0 +1,21 @@
+.sidebar-thumb{
+    float: left;
+    overflow: hidden;
+    margin-right: 15px;
+}
+.sidebar-thumb img{
+  background: #fff;
+  border: 5px dashed #FED148;
+  padding: 6px;
+  height: 200px;
+  width: 200px;
+
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+}
+
+a {
+  color: black;
+  /* border: 2px solid #FED148; */
+}
