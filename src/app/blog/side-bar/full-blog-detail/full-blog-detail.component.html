@@ -1,32 +1,33 @@
-<div class="card goldBorder">
-  <div class="card-body">
-    <h3>{{ blogName }} By {{ authorName }}</h3>
-      <p>{{ topic }}</p>
+<div class="card gold">
+  <div class="card-body text-center">
+    <h3>{{ blog.title }} By {{ blog.name }}</h3>
+      <p></p>
     </div>
   </div>
-<div class="card mt-3 goldBorder">
+<div class="card mt-3">
   <div class="card-body">
     <div class="row">
       <div class="col-md-12">
         <div class="sidebar-thumb">
           <img
-            [src]="imageLink"
+            [src]="blog.imageLink"
             class="img-responsive"
             alt="Your Image Here">
         </div>
         <h5>INTRODUCTION:</h5>
-        <h6 class="pull-right">{{ summary }}</h6>
+        <h6 class="pull-right">{{ blog.summary }}</h6>
       </div>
     </div>
   </div>
 </div>
-<div class="card mt-3 goldBorder">
+<div class="card mt-3">
   <div class="card-body">
     <div class="row">
       <div class="col-md-12">
-        <p>{{ blog }}</p>
+        <p>{{ blog.blog }}</p>
       </div>
     </div>
+    <hr>
     <button type="button" class="btn btn-primary">Comment</button>
   </div>
 </div>

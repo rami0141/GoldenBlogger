@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Blog } from '../blog.model';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
+  selectedBlog: Blog;
 
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

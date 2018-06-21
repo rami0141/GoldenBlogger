@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import{ Blog } from '../../../blog.model';
 
 @Component({
@@ -9,10 +9,15 @@ import{ Blog } from '../../../blog.model';
 export class BlogItemComponent implements OnInit {
   // use the @Input() decorator to get the blog from outside or any data
   @Input() blog: Blog;
+  @Output() blogSelected = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelected() {
+    this.blogSelected.emit()
   }
 
 }

@@ -1,3 +1,5 @@
 <app-blog-item
-  *ngFor="let blog of blogs"
-  [blog]="blog"></app-blog-item>
+    href="#"
+  *ngFor="let blogEl of blogs"
+  [blog]="blogEl"
+  (blogSelected)="onBlogSelected(blogEl)"></app-blog-item>
