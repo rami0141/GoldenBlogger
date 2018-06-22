@@ -1,6 +1,11 @@
+import { EventEmitter } from '@angular/core';
+
 import { Blog } from './blog.model';
-//TypeScript class - manage our blogs
+//TypeScript class - manage our blogs in a central place
 export class BlogService {
+  //EventEmmiter that holds blog data
+  blogSelected = new EventEmitter<Blog>();
+
   private blogs: Blog[] = [
   new Blog(
     'The Bone',

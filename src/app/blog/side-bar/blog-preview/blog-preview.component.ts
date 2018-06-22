@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Blog } from '../../blog.model';
 import { BlogService } from '../../blog.service';
 
@@ -8,8 +8,6 @@ import { BlogService } from '../../blog.service';
   styleUrls: ['./blog-preview.component.css']
 })
 export class BlogPreviewComponent implements OnInit {
-  // Pass the blog info as an EventEmitter
-  @Output() blogWasSelected = new EventEmitter<Blog>();
   //This will store only an array - objects defined in our model
   blogs: Blog[];
 
@@ -17,10 +15,6 @@ export class BlogPreviewComponent implements OnInit {
 
   ngOnInit() {
     this.blogs = this.blogService.getBlogs();
-  }
-
-  onBlogSelected(blog: Blog) {
-    this.blogWasSelected.emit(blog);
   }
 
 }
