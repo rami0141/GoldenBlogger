@@ -17,6 +17,7 @@ import { ViewCreateNewComponent } from './blog/create-new-blog/view-create-new/v
 import { InstructionsComponent } from './blog/create-new-blog/instructions/instructions.component';
 import { BlogItemComponent } from './blog/side-bar/blog-preview/blog-item/blog-item.component';
 import { FullBlogDetailComponent } from './blog/side-bar/full-blog-detail/full-blog-detail.component';
+import { BlogService } from './blog/blog.service';
 
 // Routes - specific type = routes - Need to import
 // Needs to be an array - because we will have multiple routes
@@ -50,7 +51,7 @@ const appRoutes: Routes = [
     // AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
