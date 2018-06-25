@@ -1,1 +1,6 @@
 
+div.ex3 {
+    width: 450px;
+    height: 800px;
+    overflow: auto;
+}
