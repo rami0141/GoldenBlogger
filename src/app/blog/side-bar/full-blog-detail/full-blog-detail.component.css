@@ -5,6 +5,9 @@
   border: 5px solid #FED148;
 }
 
+.yellow {
+  background-color: #fffee0;
+}
 .sidebar-thumb{
     float: left;
     overflow: hidden;
