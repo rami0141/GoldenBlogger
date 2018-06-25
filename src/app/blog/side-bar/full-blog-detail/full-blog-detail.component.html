@@ -20,14 +20,30 @@
     </div>
   </div>
 </div>
-<div class="card mt-3 mb-5">
+<div class="card mt-3">
   <div class="card-body">
     <div class="row">
       <div class="col-md-12">
         <p>{{ blog.blog }}</p>
       </div>
     </div>
-    <hr>
-    <button type="button" class="btn btn-primary">Comment</button>
   </div>
 </div>
+  <div class="card mt-3 mb-5">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+          <form>
+            <div class="form-group">
+              <label for="blog">Leave A Comment Here:</label>
+              <textarea
+                class="form-control"
+                rows="3"
+                required></textarea>
+            </div>
+            <button type="button" class="btn btn-primary">Comment</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

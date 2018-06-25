@@ -1,3 +1,4 @@
+// A Service define things like how to fetch data from the server, validate user input or log directly to the console.
 import { EventEmitter } from '@angular/core';
 
 import { Blog } from './blog.model';
