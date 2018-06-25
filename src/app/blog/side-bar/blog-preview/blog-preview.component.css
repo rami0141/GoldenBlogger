@@ -1,6 +1,5 @@
-
-div.ex3 {
+div.scroll {
     width: 450px;
-    height: 700px;
+    height: 870px;
     overflow: auto;
 }

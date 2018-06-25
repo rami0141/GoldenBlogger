@@ -1,4 +1,4 @@
-# Gold-Blog
+# GoldenBlog
 
 ![alt text](src/assets/images/app.PNG)
 
