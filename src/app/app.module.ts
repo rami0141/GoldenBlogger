@@ -18,6 +18,7 @@ import { InstructionsComponent } from './blog/create-new-blog/instructions/instr
 import { BlogItemComponent } from './blog/side-bar/blog-preview/blog-item/blog-item.component';
 import { FullBlogDetailComponent } from './blog/side-bar/full-blog-detail/full-blog-detail.component';
 import { BlogService } from './blog/blog.service';
+import { FooterComponent } from './footer/footer.component';
 
 // Routes - specific type = routes - Need to import
 // Needs to be an array - because we will have multiple routes
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
     InstructionsComponent,
     BlogItemComponent,
     FullBlogDetailComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
