@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from '../../blog.model';
-import { BlogService } from '../../blog.service';
+// import { Blog } from '../../blog.model';
+// import { BlogService } from '../../blog.service';
+// Inject - database
+import { BlogsService } from '../../../blogs.service'
 
 @Component({
   selector: 'app-blog-preview',
@@ -9,12 +11,16 @@ import { BlogService } from '../../blog.service';
 })
 export class BlogPreviewComponent implements OnInit {
   //This will store only an array - objects defined in our model
-  blogs: Blog[];
+  // blogs: Blog[];
 
-  constructor(private blogService: BlogService) { }
+  // database
+  constructor(private blogsService: BlogsService) { }
 
   ngOnInit() {
-    this.blogs = this.blogService.getBlogs();
+    this.blogsService.getBlogs().subscribe((blogs) => {
+      console.log(blogs);
+    });
+    //this.blogs = this.blogsService.getBlogs();
   }
 
 }

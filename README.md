@@ -6,6 +6,7 @@ With Gold-Blog you can read popular blogs, search blogs by topic and post your o
 
 ## Technologies
 
+MEAN Stack (MongoDB, Express, Angular, Node.js)
 * [Angular.js](https://angularjs.org/) Front-End Application Framework
 * [Bootstrap](https://getbootstrap.com/) Front-End Framework
 * [Node.js](https://nodejs.org/en/) Open source server framework for using JavaScript

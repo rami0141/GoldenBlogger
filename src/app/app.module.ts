@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from "@angular/router";
 // import { AppRoutingModule } from
 
@@ -19,6 +20,7 @@ import { BlogItemComponent } from './blog/side-bar/blog-preview/blog-item/blog-i
 import { FullBlogDetailComponent } from './blog/side-bar/full-blog-detail/full-blog-detail.component';
 import { BlogService } from './blog/blog.service';
 import { FooterComponent } from './footer/footer.component';
+import { BlogsService } from './blogs.service';
 
 // Routes - specific type = routes - Need to import
 // Needs to be an array - because we will have multiple routes
@@ -51,9 +53,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpModule,
     // AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [BlogService],
+  providers: [BlogService, BlogsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
