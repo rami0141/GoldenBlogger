@@ -8,6 +8,11 @@ With Gold-Blog you can read popular blogs, search blogs by topic and post your o
 
 * [Angular.js](https://angularjs.org/) Front-End Application Framework
 * [Bootstrap](https://getbootstrap.com/) Front-End Framework
+* [Node.js](https://nodejs.org/en/) Open source server framework for using JavaScript
+* [Express](https://www.npmjs.com/package/express) Web server framework for Node.js
+* [Body-parser](https://www.npmjs.com/package/body-parser) Request body parsing middleware for Node.js
+* [MongoDB](https://www.mongodb.com/) Database
+* [Mongoose](http://mongoosejs.com/) ODM
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
