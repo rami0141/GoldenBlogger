@@ -1,29 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
-import{ Blog } from '../../../blog.model';
+import { Blogs } '../../../../blogs'
 import { BlogsService } from '../../../../blogs.service'
 
 @Component({
   selector: 'app-blog-item',
   templateUrl: './blog-item.component.html',
-  styleUrls: ['./blog-item.component.css']
+  styleUrls: ['./blog-item.component.css'],
+  providers: [BlogsService]
 })
 export class BlogItemComponent implements OnInit {
-  // use the @Input() decorator to get the blog from outside or any data
-  @Input() blog: Blog;
+  blogs: Blog[];
 
-
-  constructor(private blogsService: BlogsService) { }
-
-  ngOnInit() {
-    this.blogsService.getBlogs().subscribe((blogs) => {
-      console.log(blogs);
-    });
-    //this.blogs = this.blogsService.getBlogs();
+  constructor(private blogsService: BlogsService) {
+    this.blogsService.getBlogs()
+      .subscribe(blogs => {
+        this.blogs = blogs;
+      })
   }
 
-  // onSelected() {
-  //   // use blogselected emmiter emitter and call emit and emit the blog of this blog item component
-  //   this.BlogService.blogSelected.emit(this.blog);
-  // }
+  ngOnInit() {
+  }
 
 }

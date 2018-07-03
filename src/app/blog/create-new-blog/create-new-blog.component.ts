@@ -15,7 +15,6 @@ export class CreateNewBlogComponent implements OnInit {
   blogForm: FormGroup;
   imageLink = '';
   // topic = '';
-
   constructor() { }
 
   ngOnInit() {
@@ -25,7 +24,6 @@ export class CreateNewBlogComponent implements OnInit {
   // addBlog(blogArray: Blog) {
   //   this.blog.push(blog);
   // }
-
   onUpdateTitleName(event: any) {
     this.blogName = event.target.value;
   }
@@ -72,7 +70,6 @@ export class CreateNewBlogComponent implements OnInit {
   //     this.blogForm.value['imageLink'],
   //     this.blogForm.value['summary'],
   //     this.blogForm.value['blog']);
-
   // }
   }
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+// import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class BlogsService {
   constructor(private http: HttpClient) { }
 
   getBlogs() {
-    return this.http.get(`${this.uri}/blogs`);
+    return this.http.get('http://localhost:4000/blogs');
+      .map(res => res.json());
   }
 
   getBlogsById(id) {
@@ -26,7 +28,7 @@ export class BlogsService {
       summary: summary,
       blog: blog
     };
-    return this.http.post(`${this.uri}/blogs/add`, blogs);
+    return this.http.post('http://localhost:4000/blogs/add', blogs);
   }
 
   updateBlogs(id, title, name, topic, imageLink, summary, blog) {

@@ -69,9 +69,9 @@ router.route('/blogs/update/:id').post((req, res) => {
 
         // makes sure that update blog gets saved in the database
         blogs.save().then(blogs => {
-          res.json('Update done');
+          res.json('Blog was added');
         }).catch(err => {
-          res.status(400).send('Update failed');
+          res.status(400).send('Blog post failed');
         });
       }
   });

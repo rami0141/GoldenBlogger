@@ -1,5 +1,4 @@
-// Defines what a recipe looks like - blueprint
-export class Blog {
+export class Blogs {
   public title: string;
   public name: string;
   public topic: string;

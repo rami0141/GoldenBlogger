@@ -1,14 +1,15 @@
+<div *ngFor="let blogs of blogs">
 <a
   class="list-group-item clearfix mb-4 mr-3 bg-light"
-
   (click)="onSelected()">
   <!-- ngFor looping all blogs -->
   <div class="sidebar-thumb">
     <img
-      [src]="blog.imageLink"
-      alt="{{ blog.title }}"
+      [src]="blogs.imageLink"
+      alt="{{ blogs.title }}"
       class="img-responsive img-round">
   </div>
-    <h4 class="list-group-item-heading">{{ blog.title }} By {{ blog.name }}</h4>
-    <p class="list-group-item-text">{{ blog.summary }}</p>
+    <h4 class="list-group-item-heading">{{ blogs.title }} By {{ blogs.name }}</h4>
+    <p class="list-group-item-text">{{ blogs.summary }}</p>
 </a>
+</div>
