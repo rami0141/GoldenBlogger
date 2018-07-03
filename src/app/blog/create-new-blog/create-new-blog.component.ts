@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-create-new-blog',
@@ -71,6 +72,8 @@ export class CreateNewBlogComponent implements OnInit {
   //     this.blogForm.value['imageLink'],
   //     this.blogForm.value['summary'],
   //     this.blogForm.value['blog']);
+
   // }
-}
+  }
+
 }

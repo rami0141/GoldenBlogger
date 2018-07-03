@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-md-6 mb-5">
     <!-- Telling Angular that the Form is managed by us and not by Angular -->
-    <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="blogForm" (ngSubmit)="onSubmit(); blogForm.reset()">
       <div class="card p-3 goldBorder">
         <div class="card-body">
           <div class="form-group">
