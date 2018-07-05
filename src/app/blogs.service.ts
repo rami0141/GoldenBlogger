@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 // import 'rxjs/add/operator/filter';
 // import 'rxjs/add/operator/map';
 
@@ -17,13 +18,13 @@ export class BlogsService {
     return this.http.get('http://localhost:4000/blogs');
       .map(res => res.json());
   }
-  //
+
   // getBlogsById(id) {
   //   return this.http.get(`${this.uri}/blogs/${id}`);
   // }
 
   addBlogs(title, name, topic, imageLink, summary, blog) {
-    const newBlog = {
+    let newBlog = {
       title: title,
       name: name,
       topic: topic,
