@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { map } from 'rxjs/operators';
 // import 'rxjs/add/operator/filter';
 // import 'rxjs/add/operator/map';
 
@@ -10,28 +9,21 @@ import { map } from 'rxjs/operators';
 export class BlogsService {
   uri = 'http://localhost:4000';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    console.log("Initialized")
+    }
 
   getBlogs() {
     return this.http.get('http://localhost:4000/blogs');
       .map(res => res.json());
   }
+  //
+  // getBlogsById(id) {
+  //   return this.http.get(`${this.uri}/blogs/${id}`);
+  // }
 
-  getBlogsById(id) {
-    return this.http.get(`${this.uri}/blogs/${id}`);
-  }
-
-  addBlogs(newBlog) {
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post('http://localhost:4000/blogs/add', JSON.stringify(newBlog), {headers: headers});
-      .map(res => res.json());
-      console.log(newBlog);
-  }
-
-
-  updateBlogs(id, title, name, topic, imageLink, summary, blog) {
-    const blogs = {
+  addBlogs(title, name, topic, imageLink, summary, blog) {
+    const newBlog = {
       title: title,
       name: name,
       topic: topic,
@@ -39,11 +31,26 @@ export class BlogsService {
       summary: summary,
       blog: blog
     };
-    return this.http.post(`${this.uri}/blogs/update/${id}`, blogs);
+    console.log(newBlog)
+    this.http.post('http://localhost:4000/blogs/add', newBlog)
+      .subscribe(res => console.log("Blog Submitted!"));
   }
 
-  deleteBlogs(id) {
-    return this.http.get(`${this.uri}/blogs/delete/${id}`);
-  }
+
+  // updateBlogs(id, title, name, topic, imageLink, summary, blog) {
+  //   const blogs = {
+  //     title: title,
+  //     name: name,
+  //     topic: topic,
+  //     imageLink: imageLink,
+  //     summary: summary,
+  //     blog: blog
+  //   };
+  //   return this.http.post(`${this.uri}/blogs/update/${id}`, blogs);
+  // }
+  //
+  // deleteBlogs(id) {
+  //   return this.http.get(`${this.uri}/blogs/delete/${id}`);
+  // }
 
 }

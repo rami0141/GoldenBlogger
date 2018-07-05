@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { BlogsService } from '../../blogs.service';
 import { Blogs } from '../../blogs';
-import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-create-new-blog',
@@ -20,28 +18,29 @@ export class CreateNewBlogComponent implements OnInit {
   blogForm: FormGroup;
   imageLink = '';
   // topic = '';
-  constructor(private blogsService: BlogsService) { }
+  constructor(private blogsService: BlogsService, private fb: FormBuilder) {
+    this.createForm();
+ }
 
   ngOnInit() {
     this.initForm();
   }
 
-  addBlogs(event) {
-    event.preventDefault();
-    var newBlog = {
-      title: this.title,
-      name: this.name,
-      topic: this.topic,
-      imageLink: this.imageLink,
-      summary: this.summary,
-      blog: this.blog
-    }
-    this.blogsService.addBlogs(newBlog)
-      console.log(newBlog);
-      .subscribe(blog => {
-        this.blog.push(blogs)
-      });
+  createForm() {
+    this.blogForm = this.fb.group({
+      title: ['', Validators.required ],
+      name: ['', Validators.required ],
+      topic: ['', Validators.required ],
+      imageLink: ['', Validators.required ],
+      summary: ['', Validators.required ],
+      blog: ['', Validators.required ]
+    });
   }
+
+  addBlogs(title, name, topic, imageLink, summary, blog) {
+    this.blogsService.addBlogs(title, name, topic, imageLink, summary, blog);
+  }
+
 
   onUpdateTitleName(event: any) {
     this.blogName = event.target.value;

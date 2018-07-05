@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');  
+const mongoose = require('mongoose');
 // importing the Blogs model
 import Blogs from './models/Blogs';
 
@@ -44,9 +44,9 @@ router.route('/blogs/:id').get((req, res) => {
 
 // Post Blog
 router.route('/blogs/add').post((req, res) => {
-  let blogs = req.body;
-  blogs.save()
-    .then(blogs => {
+  let blog = new Blogs(req.body);
+  blog.save()
+    .then(newBlog => {
       res.status(200).json({'blog': "Added successfuly"})
     })
     .catch (err => {
@@ -63,7 +63,7 @@ router.route('/blogs/update/:id').post((req, res) => {
         blogs.title = req.body.title;
         blogs. name = req.body.name;
         blogs.topic = req.body.topic;
-        blogs.imageLink = req.body.topic;
+        blogs.imageLink = req.body.imageLink;
         blogs.summary = req.body.summary;
         blogs.blog = req.body.blog;
 

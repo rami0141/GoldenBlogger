@@ -5,9 +5,9 @@ import { BlogsService } from '../../../../blogs.service'
 @Component({
   selector: 'app-blog-item',
   templateUrl: './blog-item.component.html',
-  styleUrls: ['./blog-item.component.css'],
-  providers: [BlogsService]
+  styleUrls: ['./blog-item.component.css']
 })
+
 export class BlogItemComponent implements OnInit {
   blogs: Blog[];
 

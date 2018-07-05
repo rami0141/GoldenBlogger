@@ -19,7 +19,6 @@ import { ViewCreateNewComponent } from './blog/create-new-blog/view-create-new/v
 import { InstructionsComponent } from './blog/create-new-blog/instructions/instructions.component';
 import { BlogItemComponent } from './blog/side-bar/blog-preview/blog-item/blog-item.component';
 import { FullBlogDetailComponent } from './blog/side-bar/full-blog-detail/full-blog-detail.component';
-import { BlogService } from './blog/blog.service';
 import { FooterComponent } from './footer/footer.component';
 import { BlogsService } from './blogs.service';
 
