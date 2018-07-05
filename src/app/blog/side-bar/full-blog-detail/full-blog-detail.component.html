@@ -1,6 +1,7 @@
+<div *ngFor="let blogs of blogs">
 <div class="card gold">
   <div class="card-body text-center">
-    <h3>{{ blog.title }} By {{ blog.name }}</h3>
+    <h3>{{ blogs.title }} By {{ blogs.name }}</h3>
       <p></p>
     </div>
   </div>
@@ -10,12 +11,12 @@
       <div class="col-md-12">
         <div class="sidebar-thumb">
           <img
-            [src]="blog.imageLink"
+            [src]="blogs.imageLink"
             class="img-responsive"
             alt="Your Image Here">
         </div>
         <h5>INTRODUCTION:</h5>
-        <h6 class="pull-right">{{ blog.summary }}</h6>
+        <h6 class="pull-right">{{ blogs.summary }}</h6>
       </div>
     </div>
   </div>
@@ -24,12 +25,12 @@
   <div class="card-body">
     <div class="row">
       <div class="col-md-12">
-        <p>{{ blog.blog }}</p>
+        <p>{{ blogs.blog }}</p>
       </div>
     </div>
   </div>
 </div>
-  <div class="card mt-3 mb-5">
+  <!-- <div class="card mt-3 mb-5">
     <div class="card-body">
       <div class="row">
         <div class="col-md-12">
@@ -46,4 +47,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+</div>

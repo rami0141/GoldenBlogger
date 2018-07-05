@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { Blog } from '../blog.model';
-import { BlogService } from '../blog.service';
+import { Blogs } from '../../blogs';
+import { BlogsService } from '../../blogs.service';
 
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.css'],
-  providers: [BlogService]
+  styleUrls: ['./side-bar.component.css']
+  // providers: [BlogsService]
 })
+
 export class SideBarComponent implements OnInit {
-  selectedBlog: Blog;
-
-  constructor(private blogService: BlogService) { }
-
-  ngOnInit() {
-    this.blogService.blogSelected
-      .subscribe(
-        (blog: Blog) => {
-          this.selectedBlog = blog;
-        }
-      );
+  // selectedBlog: Blogs;
+  //
+  // constructor(private blogsService: BlogsService) { }
+  //
+  // ngOnInit() {
+  //   this.blogsService.blogsSelected
+  //     .subscribe(
+  //       (blogs: Blogs) => {
+  //         this.selectedBlog = blogs;
+  //       }
+  //     );
 
   }
 

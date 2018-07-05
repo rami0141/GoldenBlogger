@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgForm } from '@angular/forms';
+import { BlogsService } from '../../blogs.service';
+import { Blogs } from '../../blogs';
+import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-create-new-blog',
   templateUrl: './create-new-blog.component.html',
   styleUrls: ['./create-new-blog.component.css']
 })
+
 export class CreateNewBlogComponent implements OnInit {
   blogName = '';
   authorName = '';
@@ -15,15 +20,29 @@ export class CreateNewBlogComponent implements OnInit {
   blogForm: FormGroup;
   imageLink = '';
   // topic = '';
-  constructor() { }
+  constructor(private blogsService: BlogsService) { }
 
   ngOnInit() {
     this.initForm();
   }
 
-  // addBlog(blogArray: Blog) {
-  //   this.blog.push(blog);
-  // }
+  addBlogs(event) {
+    event.preventDefault();
+    var newBlog = {
+      title: this.title,
+      name: this.name,
+      topic: this.topic,
+      imageLink: this.imageLink,
+      summary: this.summary,
+      blog: this.blog
+    }
+    this.blogsService.addBlogs(newBlog)
+      console.log(newBlog);
+      .subscribe(blog => {
+        this.blog.push(blogs)
+      });
+  }
+
   onUpdateTitleName(event: any) {
     this.blogName = event.target.value;
   }
@@ -60,17 +79,4 @@ export class CreateNewBlogComponent implements OnInit {
       'blog': new FormControl(blog, Validators.required),
     });
   }
-
-  onSubmit() {
-    console.log(this.blogForm.value);
-  //   const newBlog = new Blogger(
-  //     this.blogForm.value['title'],
-  //     this.blogForm.value['name'],
-  //     this.blogForm.value['topic'],
-  //     this.blogForm.value['imageLink'],
-  //     this.blogForm.value['summary'],
-  //     this.blogForm.value['blog']);
-  // }
-  }
-
 }

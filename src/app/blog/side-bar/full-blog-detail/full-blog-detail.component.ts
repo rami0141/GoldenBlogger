@@ -1,18 +1,23 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BlogsService } from '../../../blogs.service'
+import { Blogs } from '../../../blogs'
 
-import { Blog } from '../../blog.model';
 
 @Component({
   selector: 'app-full-blog-detail',
   templateUrl: './full-blog-detail.component.html',
-  styleUrls: ['./full-blog-detail.component.css']
+  styleUrls: ['./full-blog-detail.component.css'],
+  // providers: [BlogsService]
 })
-export class FullBlogDetailComponent implements OnInit {
-  //get data from outside
-  @Input() blog: Blog;
-  constructor() { }
 
-  ngOnInit() {
-  }
+export class FullBlogDetailComponent implements OnInit {
+  // blogs: Blog[];
+  //
+  // constructor(private blogsService: BlogsService) {
+  //   this.blogsService.getBlogs()
+  //     .subscribe(blogs => {
+  //       this.blogs = blogs;
+  //     })
+  // }
 
 }

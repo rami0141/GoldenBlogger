@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+// import 'rxjs/add/operator/filter';
 // import 'rxjs/add/operator/map';
 
 @Injectable({
@@ -19,17 +21,14 @@ export class BlogsService {
     return this.http.get(`${this.uri}/blogs/${id}`);
   }
 
-  addBlogs(title, name, topic, imageLink, summary, blog) {
-    const blogs = {
-      title: title,
-      name: name,
-      topic: topic,
-      imageLink: imageLink,
-      summary: summary,
-      blog: blog
-    };
-    return this.http.post('http://localhost:4000/blogs/add', blogs);
+  addBlogs(newBlog) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:4000/blogs/add', JSON.stringify(newBlog), {headers: headers});
+      .map(res => res.json());
+      console.log(newBlog);
   }
+
 
   updateBlogs(id, title, name, topic, imageLink, summary, blog) {
     const blogs = {

@@ -9,6 +9,6 @@ import { BlogsService } from '../../../blogs.service'
 })
 export class BlogPreviewComponent implements OnInit {
 
-  constructor(private blogsService: BlogsService) { }
+  // constructor(private blogsService: BlogsService) { }
 
 }

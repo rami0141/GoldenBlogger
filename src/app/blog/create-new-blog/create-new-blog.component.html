@@ -6,7 +6,7 @@
 <div class="row">
   <div class="col-md-6 mb-5">
     <!-- Telling Angular that the Form is managed by us and not by Angular -->
-    <form [formGroup]="blogForm" (ngSubmit)="onSubmit(); blogForm.reset()">
+    <form [formGroup]="blogForm" (submit)="addBlogs($event)">
       <div class="card p-3 goldBorder">
         <div class="card-body">
           <div class="form-group">
@@ -15,6 +15,7 @@
               type="text"
               id="title"
               formControlName="title"
+              [(ngModel)]="title"
               class="form-control"
               (input)="onUpdateTitleName($event)"
               required>
@@ -25,6 +26,7 @@
               type="text"
               id="name"
               formControlName="name"
+              [(ngModel)]="name"
               class="form-control"
               (input)="onUpdateAuthorName($event)"
               required>
@@ -34,6 +36,7 @@
             <select
               class="form-control"
               id="topic"
+              [(ngModel)]="topic"
               formControlName="topic"
               required>
               <option selected></option>
@@ -56,6 +59,7 @@
               type="text"
               id="imageLink"
               formControlName="imageLink"
+              [(ngModel)]="imageLink"
               class="form-control"
               (input)="onUpdateLink($event)"
               required>
@@ -66,6 +70,7 @@
               class="form-control"
               id="summary"
               formControlName="summary"
+              [(ngModel)]="summary"
               rows="6"
               (input)="onUpdateSummary($event)"
               required></textarea>
@@ -76,6 +81,7 @@
               class="form-control"
               id="blog"
               formControlName="blog"
+              [(ngModel)]="blog"
               rows="15"
               (input)="onUpdateBlog($event)"
               required></textarea>
