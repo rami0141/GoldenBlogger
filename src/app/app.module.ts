@@ -4,8 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from "@angular/router";
- import { Observable } from 'rxjs/Observable';
-// import { AppRoutingModule } from
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -55,6 +54,7 @@ const appRoutes: Routes = [
     // AppRoutingModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    ReactiveFormsModule 
   ],
   providers: [BlogsService],
   bootstrap: [AppComponent]

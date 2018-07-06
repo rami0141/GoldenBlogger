@@ -21,7 +21,11 @@
               name="title"
               required>
           </div>
-
+          <div *ngIf="blogForm.controls['title'].invalid && (blogForm.controls['title'].dirty || blogForm.controls['title'].touched)" class="alert alert-danger">
+            <div *ngIf="blogForm.controls['title'].errors.required">
+              Blog title is required.
+            </div>
+          </div>
           <div class="form-group">
             <label for="name">Author:</label>
             <input
@@ -33,6 +37,11 @@
               (input)="onUpdateAuthorName($event)"
               name="name"
               required>
+          </div>
+          <div *ngIf="blogForm.controls['name'].invalid && (blogForm.controls['name'].dirty || blogForm.controls['name'].touched)" class="alert alert-danger">
+            <div *ngIf="blogForm.controls['name'].errors.required">
+              Authors name is required.
+            </div>
           </div>
           <div class="form-group">
             <label for="topic">Blog Topic:</label>
@@ -68,6 +77,11 @@
               (input)="onUpdateLink($event)"
               required>
           </div>
+          <div *ngIf="blogForm.controls['imageLink'].invalid && (blogForm.controls['imageLink'].dirty || blogForm.controls['imageLink'].touched)" class="alert alert-danger">
+            <div *ngIf="blogForm.controls['imageLink'].errors.required">
+              Image link is required
+            </div>
+          </div>
           <div class="form-group">
             <label for="summary">Write A Blog Summary:</label>
             <textarea
@@ -79,6 +93,11 @@
               (input)="onUpdateSummary($event)"
               required></textarea>
           </div>
+          <div *ngIf="blogForm.controls['summary'].invalid && (blogForm.controls['summary'].dirty || blogForm.controls['summary'].touched)" class="alert alert-danger">
+            <div *ngIf="blogForm.controls['summary'].errors.required">
+              Blog summary is required
+            </div>
+          </div>
           <div class="form-group">
             <label for="blog">Write Blog Here:</label>
             <textarea
@@ -89,6 +108,11 @@
               rows="15"
               (input)="onUpdateBlog($event)"
               required></textarea>
+          </div>
+          <div *ngIf="blogForm.controls['blog'].invalid && (blogForm.controls['blog'].dirty || blogForm.controls['blog'].touched)" class="alert alert-danger">
+            <div *ngIf="blogForm.controls['blog'].errors.required">
+              A blog is required.
+            </div>
           </div>
           <button
             type="submit"
