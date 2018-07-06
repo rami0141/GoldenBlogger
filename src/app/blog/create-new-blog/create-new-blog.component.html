@@ -23,7 +23,7 @@
           </div>
           <div *ngIf="blogForm.controls['title'].invalid && (blogForm.controls['title'].dirty || blogForm.controls['title'].touched)" class="alert alert-danger">
             <div *ngIf="blogForm.controls['title'].errors.required">
-              Blog title is required.
+              Blog Title is required.
             </div>
           </div>
           <div class="form-group">
@@ -40,7 +40,7 @@
           </div>
           <div *ngIf="blogForm.controls['name'].invalid && (blogForm.controls['name'].dirty || blogForm.controls['name'].touched)" class="alert alert-danger">
             <div *ngIf="blogForm.controls['name'].errors.required">
-              Authors name is required.
+              Authors Name is required.
             </div>
           </div>
           <div class="form-group">
@@ -79,7 +79,7 @@
           </div>
           <div *ngIf="blogForm.controls['imageLink'].invalid && (blogForm.controls['imageLink'].dirty || blogForm.controls['imageLink'].touched)" class="alert alert-danger">
             <div *ngIf="blogForm.controls['imageLink'].errors.required">
-              Image link is required
+              Image Link is required
             </div>
           </div>
           <div class="form-group">
@@ -95,7 +95,7 @@
           </div>
           <div *ngIf="blogForm.controls['summary'].invalid && (blogForm.controls['summary'].dirty || blogForm.controls['summary'].touched)" class="alert alert-danger">
             <div *ngIf="blogForm.controls['summary'].errors.required">
-              Blog summary is required
+              Blog Summary is required
             </div>
           </div>
           <div class="form-group">
@@ -111,7 +111,7 @@
           </div>
           <div *ngIf="blogForm.controls['blog'].invalid && (blogForm.controls['blog'].dirty || blogForm.controls['blog'].touched)" class="alert alert-danger">
             <div *ngIf="blogForm.controls['blog'].errors.required">
-              A blog is required.
+              A Blog is required.
             </div>
           </div>
           <button
@@ -119,11 +119,12 @@
             class="btn btn-lg gold mr-4"
             (click)="addBlogs(title, name, topic, imageLink, summary, blog)"
             [disabled]="!blogForm.valid">Post Blog</button>
-          <button type="button" class="btn btn-lg gold">Cancel</button>
+          <button (click)="reset()" type="button" class="btn btn-lg gold">Clear</button>
         </div>
       </div>
     </form>
   </div>
+
   <div class="col-md-6 mb-5">
     <!-- <app-new-blog-display></app-new-blog-display> -->
     <div class="card gold text-center">

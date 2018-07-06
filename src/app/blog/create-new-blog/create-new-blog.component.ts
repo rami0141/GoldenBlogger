@@ -23,7 +23,12 @@ export class CreateNewBlogComponent implements OnInit {
  }
 
   ngOnInit() {
-    this.initForm();
+    // this.initForm();
+  }
+
+  reset() {
+    this.blogForm.reset();
+    console.log("form has been cleared")
   }
 
   createForm() {
@@ -61,21 +66,21 @@ export class CreateNewBlogComponent implements OnInit {
     this.blog = event.target.value;
   }
 
-  private initForm() {
-    let blogName = '';
-    let authorName = '';
-    let blogTopic = '';
-    let blogImageLink = '';
-    let blogSummary = '';
-    let blog = '';
-
-    this.blogForm = new FormGroup({
-      'title': new FormControl(blogName, Validators.required),
-      'name': new FormControl(authorName, Validators.required),
-      'topic': new FormControl(blogTopic, Validators.required),
-      'imageLink': new FormControl(blogImageLink, Validators.required),
-      'summary': new FormControl(blogSummary, Validators.required),
-      'blog': new FormControl(blog, Validators.required),
-    });
-  }
+  // private initForm() {
+  //   let blogName = '';
+  //   let authorName = '';
+  //   let blogTopic = '';
+  //   let blogImageLink = '';
+  //   let blogSummary = '';
+  //   let blog = '';
+  //
+  //   this.blogForm = new FormGroup({
+  //     'title': new FormControl(blogName, Validators.required),
+  //     'name': new FormControl(authorName, Validators.required),
+  //     'topic': new FormControl(blogTopic, Validators.required),
+  //     'imageLink': new FormControl(blogImageLink, Validators.required),
+  //     'summary': new FormControl(blogSummary, Validators.required),
+  //     'blog': new FormControl(blog, Validators.required),
+  //   });
+  // }
 }
