@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Blogs } from '../../../../blogs'
 import { BlogsService } from '../../../../blogs.service'
+// import { Router, ActivatedRoute } from '@angular/router';
+// import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-blog-item',
@@ -9,16 +11,12 @@ import { BlogsService } from '../../../../blogs.service'
 })
 
 export class BlogItemComponent implements OnInit {
-  blogs: Blog[];
+  @Input() blogs: Blogs;
+  @Input() index: number;
 
-  constructor(private blogsService: BlogsService) {
-    this.blogsService.getBlogs()
-      .subscribe(blogs => {
-        this.blogs = blogs;
-      })
-  }
+  constructor() { }
 
   ngOnInit() {
-  }
 
+  }
 }

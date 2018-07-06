@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BlogsService } from '../../../blogs.service'
-import { Blogs } from '../../../blogs'
+// import { BlogsService } from '../../../blogs.service'
+// import { Blogs } from '../../../blogs'
 
 
 @Component({
@@ -11,6 +11,10 @@ import { Blogs } from '../../../blogs'
 })
 
 export class FullBlogDetailComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() {
+  }
   // blogs: Blog[];
   //
   // constructor(private blogsService: BlogsService) {

@@ -1,7 +1,7 @@
-<div *ngFor="let blogs of blogs">
+<!-- (click)="onSelected()" -->
 <a
   class="list-group-item clearfix mb-4 mr-3 bg-light"
-  (click)="onSelected()">
+  [routerLink]="[index]">
   <!-- ngFor looping all blogs -->
   <div class="sidebar-thumb">
     <img
@@ -12,4 +12,3 @@
     <h4 class="list-group-item-heading">{{ blogs.title }} By {{ blogs.name }}</h4>
     <p class="list-group-item-text">{{ blogs.summary }}</p>
 </a>
-</div>
