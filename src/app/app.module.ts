@@ -19,14 +19,15 @@ import { BlogItemComponent } from './blog/side-bar/blog-preview/blog-item/blog-i
 import { FullBlogDetailComponent } from './blog/side-bar/full-blog-detail/full-blog-detail.component';
 import { FooterComponent } from './footer/footer.component';
 import { BlogsService } from './blogs.service';
-
 // Routes - specific type = routes - Need to import
 // Needs to be an array - because we will have multiple routes
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'topics', component: TopicsComponent },
   { path: 'addBlog', component: CreateNewBlogComponent },
-  { path: 'view', component: SideBarComponent },
+  { path: 'blogs', component: BlogComponent, children: [
+    { path: ':id', component: FullBlogDetailComponent },
+  ] },
 ];
 
 @NgModule({

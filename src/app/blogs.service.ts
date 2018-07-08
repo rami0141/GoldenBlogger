@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs/Subscription';
 
+import { Blogs } from './blogs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +20,9 @@ export class BlogsService {
       // .map(res => res.json());
   }
 
+  getBlog(index: number) {
+    return this.blogs[index];
+  }
   // getBlogsById(id) {
   //   return this.http.get(`${this.uri}/blogs/${id}`);
   // }
