@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable, Observer } from 'rxjs'
 
@@ -14,7 +14,7 @@ import { Blogs } from '../../../blogs'
 })
 
 export class FullBlogDetailComponent implements OnInit {
-  blogs: Blogs;
+  @Input() blogs: Blogs[];
   id: number;
 
   constructor(private blogsService: BlogsService,
@@ -27,7 +27,7 @@ export class FullBlogDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          this.blogs = this.blogsService.getBlogsById(this.id);
+          this.blogs = this.blogsService.getBlogs(this.id);
           console.log(this.id)
         }
       );

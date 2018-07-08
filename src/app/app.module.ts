@@ -26,6 +26,7 @@ const appRoutes: Routes = [
   { path: 'topics', component: TopicsComponent },
   { path: 'addBlog', component: CreateNewBlogComponent },
   { path: 'blogs', component: BlogComponent, children: [
+    { path: '', component: SideBarComponent },
     { path: ':id', component: FullBlogDetailComponent },
   ] },
 ];

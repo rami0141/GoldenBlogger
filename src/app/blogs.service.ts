@@ -58,5 +58,4 @@ export class BlogsService {
   // deleteBlogs(id) {
   //   return this.http.get(`${this.uri}/blogs/delete/${id}`);
   // }
-
 }

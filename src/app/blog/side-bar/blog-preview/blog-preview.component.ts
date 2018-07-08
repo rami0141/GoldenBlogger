@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 // import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 // import { Observable } from 'rxjs/Observable';
-
 import { Blogs } from '../../../blogs';
 import { BlogsService } from '../../../blogs.service';
 
@@ -30,6 +29,5 @@ ngOnInit() {
 //     );
 //     this.blogs = this.blogsService.getBlogs();
 // }
-
 }
 }
