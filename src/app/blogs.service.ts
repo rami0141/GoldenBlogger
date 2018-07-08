@@ -20,12 +20,13 @@ export class BlogsService {
       // .map(res => res.json());
   }
 
-  getBlog(index: number) {
-    return this.blogs[index];
-  }
-  // getBlogsById(id) {
-  //   return this.http.get(`${this.uri}/blogs/${id}`);
+  // getBlog(index: number) {
+  //   return this.blogs[index];
   // }
+  getBlogsById(id) {
+    return this.http.get(`${this.uri}/blogs/${id}`);
+    console.log('Blog pulled successfully')
+  }
 
   addBlogs(title, name, topic, imageLink, summary, blog) {
     let newBlog = {

@@ -44,6 +44,7 @@ export class CreateNewBlogComponent implements OnInit {
 
   addBlogs(title, name, topic, imageLink, summary, blog) {
     this.blogsService.addBlogs(title, name, topic, imageLink, summary, blog);
+    this.blogForm.reset();
   }
 
 

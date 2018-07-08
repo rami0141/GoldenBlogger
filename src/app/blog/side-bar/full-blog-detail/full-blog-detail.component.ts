@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Observable, Observer } from 'rxjs'
 
 import { BlogsService } from '../../../blogs.service'
 import { Blogs } from '../../../blogs'
@@ -26,7 +27,8 @@ export class FullBlogDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          this.blogs = this.blogsService.getBlog(this.id);
+          this.blogs = this.blogsService.getBlogsById(this.id);
+          console.log(this.id)
         }
       );
   }
