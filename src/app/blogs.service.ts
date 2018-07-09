@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
 
 import { Blogs } from './blogs';
 
@@ -9,6 +10,7 @@ import { Blogs } from './blogs';
   providedIn: 'root'
 })
 export class BlogsService {
+  blogsChanged = new Subject<Blogs[]>();
   uri = 'http://localhost:4000';
 
   constructor(private http: HttpClient) {
@@ -20,13 +22,14 @@ export class BlogsService {
       // .map(res => res.json());
   }
 
-  // getBlog(index: number) {
-  //   return this.blogs[index];
-  // }
-  getBlogsById(id) {
-    return this.http.get(`${this.uri}/blogs/${id}`);
-    console.log('Blog pulled successfully')
+  getBlog(index: number) {
+    console.log(index)
+    return this.blogs[index];
   }
+  // getBlogsById(id) {
+  //   return this.http.get(`${this.uri}/blogs/${id}`);
+  //   console.log('Blog pulled successfully')
+  // }
 
   addBlogs(title, name, topic, imageLink, summary, blog) {
     let newBlog = {

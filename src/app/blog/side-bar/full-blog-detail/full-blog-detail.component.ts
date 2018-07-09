@@ -27,7 +27,7 @@ export class FullBlogDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          this.blogs = this.blogsService.getBlogs(this.id);
+          this.blogs = this.blogsService.getBlog(this.id);
           console.log(this.id)
         }
       );
