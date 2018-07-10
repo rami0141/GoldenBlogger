@@ -17,10 +17,10 @@
   background: #fff;
   border: 5px dashed #FED148;
   padding: 6px;
-  height: 180px;
-  width: 180px;
+  height: 280px;
+  width: 280px;
 
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  border-radius: 100px;
+  -webkit-border-radius: 200px;
+  -moz-border-radius: 200px;
+  border-radius: 200px;
 }
