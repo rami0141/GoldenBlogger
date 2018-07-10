@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { Blogs } from '../../blogs';
-// import { BlogsService } from '../../blogs.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -10,20 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SideBarComponent implements OnInit {
+
+
   constructor() { }
 
   ngOnInit() {
   }
-  // selectedBlog: Blogs;
 
-  // constructor(private blogsService: BlogsService) { }
-
-  // ngOnInit() {
-    // this.blogsService.blogsSelected
-    //   .subscribe(
-    //     (blogs: Blogs) => {
-    //       this.selectedBlog = blogs;
-    //     }
-    //   );
 
   }

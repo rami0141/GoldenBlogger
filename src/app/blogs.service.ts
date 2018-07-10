@@ -10,27 +10,36 @@ import { Blogs } from './blogs';
   providedIn: 'root'
 })
 export class BlogsService {
-  blogsChanged = new Subject<Blogs[]>();
   uri = 'http://localhost:4000';
+  blogChanged = new Subject<Blogs[]>();
+
+  private blogs: Blogs[] = []
 
   constructor(private http: HttpClient) {
     console.log("Initialized")
     }
 
+  // Gets All Blogs
   getBlogs() {
     return this.http.get('http://localhost:4000/blogs');
       // .map(res => res.json());
   }
 
-  getBlog(index: number) {
-    console.log(index)
+  setBlogs(blogs: Blogs[]) {
+      this.blogs = blogs;
+      this.blogChanged.next(this.blogs.slice());
+    }
+
+  // Gets a blog by index
+  getBlog(index:number) {
+    
     return this.blogs[index];
+    //console.log(index)
   }
   // getBlogsById(id) {
   //   return this.http.get(`${this.uri}/blogs/${id}`);
   //   console.log('Blog pulled successfully')
   // }
-
   addBlogs(title, name, topic, imageLink, summary, blog) {
     let newBlog = {
       title: title,

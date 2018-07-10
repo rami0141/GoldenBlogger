@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 // import { Observable } from 'rxjs/Observable';
 import { Blogs } from '../../../blogs';
@@ -14,20 +14,25 @@ export class BlogPreviewComponent implements OnInit {
 blogs: Blogs[];
 subscription: Subscription;
 
-constructor(private blogsService: BlogsService) { }
+constructor(private blogsService: BlogsService,
+  private router: Router,
+  private route: ActivatedRoute) { }
 
 ngOnInit() {
   this.blogsService.getBlogs()
     .subscribe((data: Blogs[]) => {
       this.blogs = data;
+      this.blogsService.setBlogs(data);
+      console.log(data[1]);
     });
-//   this.subscription = this.blogsService.blogsChanged
-//     .subscribe(
-//         (blogs: Blogs[]) => {
-//           this.blogs = blogs;
-//         }
-//     );
-//     this.blogs = this.blogsService.getBlogs();
-// }
-}
+  }
+
+  // this.subscription = this.blogsService.blogChanged
+  //   .subscribe(
+  //       (blogs: Blogs[]) => {
+  //         this.blogs = blogs;
+  //       }
+  //   );
+  //   this.blogs = this.blogsService.getBlogs();
+  // }
 }

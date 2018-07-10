@@ -14,7 +14,7 @@ import { Blogs } from '../../../blogs'
 })
 
 export class FullBlogDetailComponent implements OnInit {
-  @Input() blogs: Blogs[];
+  blogs: Blogs[];
   id: number;
 
   constructor(private blogsService: BlogsService,
@@ -28,7 +28,7 @@ export class FullBlogDetailComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           this.blogs = this.blogsService.getBlog(this.id);
-          console.log(this.id)
+          console.log(this.blogs)
         }
       );
   }
@@ -40,5 +40,4 @@ export class FullBlogDetailComponent implements OnInit {
   //       this.blogs = blogs;
   //     })
   // }
-
 }
