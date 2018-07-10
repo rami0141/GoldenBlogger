@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+
 import { BlogsService } from '../../blogs.service'
 import { Blogs } from '../../blogs'
 
@@ -11,12 +13,17 @@ import { Blogs } from '../../blogs'
 })
 
 export class SideBarComponent implements OnInit {
+  blogs: Blogs[];
 
-
-  constructor() { }
+  constructor(private blogsService: BlogsService,
+  private route: ActivatedRoute,
+  private router: Router) { }
 
   ngOnInit() {
   }
 
+  getSortedBlogs(Food) {
+    this.blogsService.getFoodBlogs(Food);
+  }
 
   }

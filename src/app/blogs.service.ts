@@ -35,11 +35,23 @@ export class BlogsService {
     return this.blogs[index];
   }
 
+  // Sort Array
+  getFoodBlogs(topic: string) {
+    console.log(this.blogs);
+    console.log(topic);
+    this.blogs.forEach(function(value) {
+        //console.log(value.topic);
+        if (topic === value.topic) {
+          console.log(value);
+        }
+      });
+    }
+
   // getBlogsById(id) {
   //   return this.http.get(`${this.uri}/blogs/${id}`);
   //   console.log('Blog pulled successfully')
   // }
-  
+
   addBlogs(title, name, topic, imageLink, summary, blog) {
     let newBlog = {
       title: title,
