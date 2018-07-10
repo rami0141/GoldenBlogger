@@ -32,14 +32,14 @@ export class BlogsService {
 
   // Gets a blog by index
   getBlog(index:number) {
-    
     return this.blogs[index];
-    //console.log(index)
   }
+
   // getBlogsById(id) {
   //   return this.http.get(`${this.uri}/blogs/${id}`);
   //   console.log('Blog pulled successfully')
   // }
+  
   addBlogs(title, name, topic, imageLink, summary, blog) {
     let newBlog = {
       title: title,

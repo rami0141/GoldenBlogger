@@ -28,16 +28,8 @@ export class FullBlogDetailComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           this.blogs = this.blogsService.getBlog(this.id);
-          console.log(this.blogs)
+          //console.log(this.blogs)
         }
       );
   }
-  // blogs: Blog[];
-  //
-  // constructor(private blogsService: BlogsService) {
-  //   this.blogsService.getBlogs()
-  //     .subscribe(blogs => {
-  //       this.blogs = blogs;
-  //     })
-  // }
 }
