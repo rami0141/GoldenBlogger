@@ -14,6 +14,7 @@ import { Blogs } from '../../blogs'
 
 export class SideBarComponent implements OnInit {
   blogs: Blogs[];
+  sortedBlogs: Blogs
 
   constructor(private blogsService: BlogsService,
   private route: ActivatedRoute,
@@ -22,8 +23,8 @@ export class SideBarComponent implements OnInit {
   ngOnInit() {
   }
 
-  getSortedBlogs(Food) {
-    this.blogsService.getFoodBlogs(Food);
+  getSortedBlogs(topic) {
+    this.blogsService.getFoodBlogs(topic);
   }
 
-  }
+}

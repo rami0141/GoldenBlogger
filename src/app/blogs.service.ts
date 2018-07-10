@@ -35,12 +35,10 @@ export class BlogsService {
     return this.blogs[index];
   }
 
-  // Sort Array
+  // Filter Array By Topic - SideBarComponent
   getFoodBlogs(topic: string) {
-    console.log(this.blogs);
     console.log(topic);
     this.blogs.forEach(function(value) {
-        //console.log(value.topic);
         if (topic === value.topic) {
           console.log(value);
         }
@@ -65,7 +63,6 @@ export class BlogsService {
     this.http.post('http://localhost:4000/blogs/add', newBlog)
       .subscribe(res => console.log("Blog Submitted!"));
   }
-
 
   // updateBlogs(id, title, name, topic, imageLink, summary, blog) {
   //   const blogs = {

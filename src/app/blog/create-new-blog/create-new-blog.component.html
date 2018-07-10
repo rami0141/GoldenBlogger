@@ -107,6 +107,7 @@
               [(ngModel)]="blog"
               rows="15"
               (input)="onUpdateBlog($event)"
+              ng-bind-html-unsafe="newlines"
               required></textarea>
           </div>
           <div *ngIf="blogForm.controls['blog'].invalid && (blogForm.controls['blog'].dirty || blogForm.controls['blog'].touched)" class="alert alert-danger">
@@ -145,7 +146,7 @@
                 alt="Your Image Here">
             </div>
             <h5>Blog Summary:</h5>
-            <h6 class="pull-right">{{ summary }}</h6>
+            <p class="pull-right" style="white-space: pre-wrap;">{{ summary }}</p>
           </div>
         </div>
       </div>
@@ -154,7 +155,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-12">
-            <pre>{{ blog }}</pre>
+            <p style="white-space: pre-wrap;">{{ blog }}</p>
           </div>
         </div>
       </div>

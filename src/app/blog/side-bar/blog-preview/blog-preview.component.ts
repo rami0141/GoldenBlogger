@@ -23,16 +23,7 @@ ngOnInit() {
     .subscribe((data: Blogs[]) => {
       this.blogs = data;
       this.blogsService.setBlogs(data);
-      console.log(data[1]);
     });
   }
 
-  // this.subscription = this.blogsService.blogChanged
-  //   .subscribe(
-  //       (blogs: Blogs[]) => {
-  //         this.blogs = blogs;
-  //       }
-  //   );
-  //   this.blogs = this.blogsService.getBlogs();
-  // }
 }
