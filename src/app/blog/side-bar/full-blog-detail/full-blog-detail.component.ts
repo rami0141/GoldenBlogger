@@ -14,7 +14,7 @@ import { Blogs } from '../../../blogs'
 })
 
 export class FullBlogDetailComponent implements OnInit {
-  blogs: Blogs[];
+  blogs = new Blogs('a','b','c','d','e','f');
   id: number;
 
   constructor(private blogsService: BlogsService,

@@ -1,5 +1,5 @@
 <a
-  class="list-group-item clearfix mb-4 bg-light ml-2 mr-1"
+  class="list-group-item clearfix mb-4 bg-light mr-2"
   [routerLink]="[index]">
   <!-- ngFor looping all blogs -->
   <div class="sidebar-thumb">
@@ -8,6 +8,7 @@
       alt="{{ blogs.title }}"
       class="img-responsive img-round">
   </div>
-    <h4 class="list-group-item-heading">{{ blogs.title }} By {{ blogs.name }}</h4>
+    <h3 class="list-group-item-heading text-center">{{ blogs.title }}</h3>
+    <h5 class="text-center"> {{ blogs.name }}</h5>
     <p class="list-group-item-text">{{ blogs.summary }}</p>
 </a>
