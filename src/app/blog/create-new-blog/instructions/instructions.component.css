@@ -1,7 +1,13 @@
-.gold {
-  background-color: black;
-  color: white;
-  font-size: 22px;
-  border: 4px solid #FED148;
-  opacity: 0.8;
+.center {
+    position: absolute;
+    top: 36%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+}
+
+img {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  /* border: 7px solid black; */
 }
