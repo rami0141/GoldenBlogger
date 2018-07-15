@@ -1,7 +1,7 @@
 # GoldenBlog
 
-![alt text](src/assets/images/app.PNG)
 ![alt text](src/assets/images/app2.PNG)
+![alt text](src/assets/images/app.PNG)
 
 With Gold-Blog you can read popular blogs, search blogs by topic and post your own short stories.
 

@@ -24,7 +24,7 @@ export class SideBarComponent implements OnInit {
   }
 
   getSortedBlogs(topic) {
-    this.blogsService.getFoodBlogs(topic);
+    this.blogsService.getSortedBlogs(topic)
   }
 
 }

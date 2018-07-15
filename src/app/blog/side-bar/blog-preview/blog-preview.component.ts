@@ -25,5 +25,4 @@ ngOnInit() {
       this.blogsService.setBlogs(data);
     });
   }
-
 }
