@@ -4,13 +4,14 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-6 mb-5">
+  <div class="col-md-8 mb-5 blog">
     <!-- Telling Angular that the Form is managed by us and not by Angular -->
-    <form [formGroup]="blogForm">
+    <h1 class=" text-center mt-4">Get Creative</h1>
+    <form [formGroup]="blogForm" class="clear p-2">
       <div class="card p-3 goldBorder">
         <div class="card-body">
           <div class="form-group">
-            <label for="title">Blog Title:</label>
+            <!-- <label for="title">Blog Title:</label> -->
             <input
               type="text"
               id="title"
@@ -18,6 +19,7 @@
               [(ngModel)]="title"
               class="form-control"
               (input)="onUpdateTitleName($event)"
+              placeholder="Blog Title:"
               name="title"
               required>
           </div>
@@ -27,13 +29,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="name">Author:</label>
             <input
               type="text"
               id="name"
               formControlName="name"
               [(ngModel)]="name"
               class="form-control"
+              placeholder="Author:"
               (input)="onUpdateAuthorName($event)"
               name="name"
               required>
@@ -44,7 +46,6 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="topic">Blog Topic:</label>
             <select
               class="form-control"
               id="topic"
@@ -67,13 +68,13 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="imageLink">Blog Image Link:</label>
             <input
               type="text"
               id="imageLink"
               formControlName="imageLink"
               [(ngModel)]="imageLink"
               class="form-control"
+              placeholder="Blog Image Link:"
               (input)="onUpdateLink($event)"
               required>
           </div>
@@ -83,13 +84,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="summary">Write A Blog Summary:</label>
             <textarea
               class="form-control"
               id="summary"
               formControlName="summary"
               [(ngModel)]="summary"
               rows="6"
+              placeholder="Write A Blog Summary:"
               (input)="onUpdateSummary($event)"
               required></textarea>
           </div>
@@ -99,13 +100,13 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="blog">Write Blog Here:</label>
             <textarea
               class="form-control"
               id="blog"
               formControlName="blog"
               [(ngModel)]="blog"
               rows="15"
+              placeholder="Write Blog Here:"
               (input)="onUpdateBlog($event)"
               ng-bind-html-unsafe="newlines"
               required></textarea>
@@ -115,50 +116,49 @@
               A Blog is required.
             </div>
           </div>
-
           <button
             type="submit"
-            class="btn btn-lg btn-primary mr-4"
+            class="btn btn-lg btn-info mr-4 float-right"
             (click)="addBlogs(title, name, topic, imageLink, summary, blog)"
             [disabled]="!blogForm.valid">Post Blog</button>
-          <button (click)="reset()" type="button" class="btn btn-lg btn-danger">Clear</button>
+          <button (click)="reset()" type="button" class="float-right mr-3 btn btn-lg btn-danger">Clear</button>
         </div>
       </div>
     </form>
   </div>
 
-  <div class="col-md-6 mb-5">
-    <!-- <app-new-blog-display></app-new-blog-display> -->
-    <div class="card gold text-center">
-      <div class="card-body">
-        <h3>{{ blogName }} By {{ authorName }}</h3>
-          <p>{{ topic }}</p>
-        </div>
-      </div>
-    <div class="card mt-3 yellow">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="sidebar-thumb">
-              <img
-                [src]="imageLink"
-                class="img-responsive"
-                alt="Your Image Here">
-            </div>
-            <h5>Blog Summary:</h5>
-            <p class="pull-right" style="white-space: pre-wrap;">{{ summary }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="card mt-3 yellow">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-md-12">
-            <p style="white-space: pre-wrap;">{{ blog }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div class="col-md-4 mb-5">
+   <!-- <app-new-blog-display></app-new-blog-display> -->
+   <div class="card yellow text-center">
+     <div class="card-body">
+       <h3>{{ blogName }} By {{ authorName }}</h3>
+         <h6>{{ topic }}</h6>
+       </div>
+     </div>
+   <div class="card mt-3 yellow">
+     <div class="card-body">
+       <div class="row">
+         <div class="col-md-12">
+           <div class="sidebar-thumb">
+             <img
+               [src]="imageLink"
+               class="img-responsive"
+               alt="Your Image Here">
+           </div>
+           <h5>Blog Summary:</h5>
+           <p class="pull-right" style="white-space: pre-wrap;">{{ summary }}</p>
+         </div>
+       </div>
+     </div>
+   </div>
+   <div class="card mt-3 yellow">
+     <div class="card-body">
+       <div class="row">
+         <div class="col-md-12">
+           <p style="white-space: pre-wrap;">{{ blog }}</p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>

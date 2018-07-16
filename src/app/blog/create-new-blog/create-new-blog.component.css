@@ -1,18 +1,49 @@
-.gold {
-  color: white;
-  font-size: 16px;
-  border: 3px solid #FED148;
-  padding: 30px;
-  background-image: url('../../../assets/images/note.JPG');
+.blog {
+  background-image: url('../../../assets/images/background.jpg')
+}
+.card {
+  background-color: transparent;
+  opacity: 0.9;
+  border: none;
+  /* border: 10px solid white; */
+}
+h1 {
+  color: black;
+   text-shadow: 2px 2px white;
+}
+.btn {
+  border: 3px solid white;
 }
 
-.yellow {
-  background-color: #fffee0;
+label, input, textarea, select {
+  color:  black;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid gray;
+  background-color: white;
+  opacity: 1;
+  width: 100%;
 }
 
 .white-space {
   width: 200px;
 }
+
+/*  Validation  */
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: 4px solid red;
+}
+
+/*  Display Blog */
+.yellow {
+  background-color: #fffee0;
+  border: 2px solid gray;
+}
+
+.white-space {
+  width: 200px;
+}
+
 .sidebar-thumb{
     float: left;
     overflow: hidden;
@@ -22,18 +53,10 @@
   background: #fff;
   border: 5px dashed #FED148;
   padding: 6px;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
-}
-
-input, textarea, select, {
-  border: 1px solid gray;
-}
-
-input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
-  border: 1px solid red;
 }

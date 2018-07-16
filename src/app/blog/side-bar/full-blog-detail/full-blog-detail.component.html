@@ -9,7 +9,7 @@
     </div>
   </div>
 </div>
-<div class="card mt-3 yellow mb-5">
+<div class="card mt-3 mb-5 bg-light">
   <div class="card-body">
     <div class="row">
       <div class="col-md-12">
@@ -22,8 +22,8 @@
         <!-- <h4>INTRODUCTION:</h4> -->
         <h4 class="pull-right mt-4 p-3" style="white-space: pre-wrap;">{{ blogs.summary }}</h4>
         <p class="p-3" style="white-space: pre-wrap;">{{ blogs.blog }}</p>
-        <button type="button" class="btn btn-danger btn-lg float-right" (click)="onDeleteBlog()">Delete Blog</button>
-        <button type="button" class="btn btn-primary btn-lg float-right mr-3" (click)="onEditBlog()">Update Blog</button>
+        <button type="button" class="btn btn-danger btn-lg float-right" (click)="onDeleteBlog()"><i class="fa fa-trash mr-1" aria-hidden="true"></i>Delete Blog</button>
+        <button type="button" class="btn btn-info  btn-lg float-right mr-3" (click)="onEditBlog()"><i class="fa fa-paint-brush mr-1" aria-hidden="true"></i>Update Blog</button>
       </div>
     </div>
   </div>
