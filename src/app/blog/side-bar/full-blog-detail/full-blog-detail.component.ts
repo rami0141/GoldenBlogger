@@ -16,11 +16,11 @@ import { Blogs } from '../../../blogs'
 export class FullBlogDetailComponent implements OnInit {
   blogs = new Blogs('a','b','c','d','e','f');
   id: number;
+  uri = 'http://localhost:4000';
 
   constructor(private blogsService: BlogsService,
   private route: ActivatedRoute,
   private router: Router) { }
-
 
   ngOnInit() {
     this.route.params
@@ -28,8 +28,21 @@ export class FullBlogDetailComponent implements OnInit {
         (params: Params) => {
           this.id = +params['id'];
           this.blogs = this.blogsService.getBlog(this.id);
-          //console.log(this.blogs)
+          console.log(this.blogs)
         }
       );
+  }
+
+  onEditBlog() {
+    this.router.navigate(['/addBlog'], {relativeTo: this.route});
+  }
+
+
+  onDeleteBlog(id) {
+    if(confirm("Are you sure you want to delete this blog?")) {
+      this.blogsService.deleteBlogs(this.blogs._id).subscribe(res => {
+        this.router.navigate(['/blogs']);
+      });
+    }
   }
 }

@@ -2,3 +2,12 @@
   color: white;
   border: 5px solid #FED148;
 }
+
+.float-left {
+  width: 60%;
+}
+
+.float-right {
+  width: 35%;
+  margin-left: 5px;
+}

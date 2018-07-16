@@ -77,8 +77,8 @@ router.route('/blogs/update/:id').post((req, res) => {
   });
 });
 
-// Delete blogs
-router.route('/blogs/delete/:id').get((req, res) => {
+//Delete blogs
+router.route('/blogs/delete/:id').delete((req, res) => {
   Blogs.findByIdAndRemove({_id: req.params.id}, (err, blogs) => {
     if (err) {
       res.json(err);
@@ -87,7 +87,6 @@ router.route('/blogs/delete/:id').get((req, res) => {
     }
   });
 });
-
 
 app.use('/', router);
 

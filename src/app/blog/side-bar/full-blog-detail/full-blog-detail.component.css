@@ -1,8 +1,9 @@
 .gold {
-  background-color: black;
+  /* background-color: black; */
   color: white;
-  border: 5px solid #FED148;
-  padding: 30px;
+  border: 2px solid #FED148;
+  padding: 50px;
+  background-image: url('../../../../assets/images/note.JPG');
 }
 
 .yellow {

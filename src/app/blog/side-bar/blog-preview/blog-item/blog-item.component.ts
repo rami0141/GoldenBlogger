@@ -19,4 +19,5 @@ export class BlogItemComponent implements OnInit {
   ngOnInit() {
 
   }
+
 }

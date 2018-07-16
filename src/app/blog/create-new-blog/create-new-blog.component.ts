@@ -23,7 +23,6 @@ export class CreateNewBlogComponent implements OnInit {
  }
 
   ngOnInit() {
-    // this.initForm();
   }
 
   reset() {

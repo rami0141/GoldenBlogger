@@ -22,3 +22,7 @@ a {
   color: black;
   cursor: pointer;
 }
+
+.fa-thumbs-up, .fa-user{
+  color: #FED148;
+}

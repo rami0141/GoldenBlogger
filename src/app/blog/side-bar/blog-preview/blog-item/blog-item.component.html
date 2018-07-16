@@ -9,6 +9,7 @@
       class="img-responsive img-round">
   </div>
     <h3 class="list-group-item-heading text-center">{{ blogs.title }}</h3>
-    <h5 class="text-center"> {{ blogs.name }}</h5>
+    <h5 class="text-center"> <i class="fa fa-user mr-2" aria-hidden="true"></i>{{ blogs.name }}</h5>
     <p class="list-group-item-text">{{ blogs.summary }}</p>
+    <p class="float-right">Posted: {{ blogs.date | date:'MM/dd/yyyy' }}</p>
 </a>

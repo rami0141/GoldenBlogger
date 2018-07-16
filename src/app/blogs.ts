@@ -1,4 +1,5 @@
 export class Blogs {
+  public _id: string;
   public title: string;
   public name: string;
   public topic: string;
