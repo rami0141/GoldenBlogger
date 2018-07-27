@@ -10,7 +10,7 @@ import { Blogs } from './blogs';
   providedIn: 'root'
 })
 export class BlogsService {
-  uri = 'http://localhost:4000';
+  uri = 'http://cristina-zhang.com/mongo';
   blogChanged = new Subject<Blogs[]>();
 
   private blogs: Blogs[] = []
@@ -21,7 +21,7 @@ export class BlogsService {
 
   // Gets All Blogs
   getBlogs() {
-    return this.http.get('http://localhost:4000/blogs');
+    return this.http.get(`${this.uri}/blogs`);
       // .map(res => res.json());
   }
 
@@ -60,7 +60,7 @@ export class BlogsService {
       blog: blog
     };
     console.log(newBlog)
-    this.http.post('http://localhost:4000/blogs/add', newBlog)
+    this.http.post(`${this.uri}4000/blogs/add`, newBlog)
       .subscribe(res => console.log("Blog Submitted!"));
   }
 
@@ -75,7 +75,12 @@ export class BlogsService {
   //   };
   //   return this.http.post(`${this.uri}/blogs/update/${id}`, blogs);
   // }
-  //
+  updateBlogs(index: number, newBlogs: Blogs) {
+  console.log(index);
+    this.blogs[index] = newBlogs;
+    this.blogChanged.next(this.blogs.slice());
+  }
+
   deleteBlogs(id: string) {
     return this.http.delete(`${this.uri}/blogs/delete/${id}`);
   }

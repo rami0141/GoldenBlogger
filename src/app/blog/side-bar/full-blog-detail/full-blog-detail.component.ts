@@ -34,7 +34,7 @@ export class FullBlogDetailComponent implements OnInit {
   }
 
   onEditBlog() {
-    this.router.navigate(['/addBlog'], {relativeTo: this.route});
+    this.router.navigate(['/blogEdit'], {relativeTo: this.route});
   }
 
 
